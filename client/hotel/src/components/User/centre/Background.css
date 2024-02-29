@@ -2,7 +2,7 @@
 #bgdivs{
   
    
-    /* background:  linear-gradient(178.6deg, rgb(255, 255, 255) 11.8%, rgb(194, 194, 194) 83.8%); */
+    background:  linear-gradient(178.6deg, rgb(255, 255, 255) 11.8%, rgb(194, 194, 194) 83.8%);
     display: flex ;
    
 }
@@ -24,3 +24,9 @@
 #bgheadingspanv{
     color: rgb(74, 74, 78);
 }
+@media  (min-width: 400px) {
+    #bgimg1{
+        margin-left:-30px;
+     width: 90%;
+    }
+   }

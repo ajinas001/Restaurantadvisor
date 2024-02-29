@@ -1,3 +1,6 @@
+/* *{
+    overflow-x: hidden;
+} */
 #logo{
     border-radius: 10px;
     height: 80px;
@@ -39,6 +42,87 @@
     margin-top: 20px;
    
 }
+#uploadimages{
+    
+    min-width: 300px;
+    max-width: 320px;
+    min-height: 200px;
+    max-height: 250px;
+    
+}
+/* @media only screen and (max-width: 600px) {
+    #uploadedimages {
+     width: 80% - 20px;
+    }
+  } */
 /* #mra-rev{
     
 } */
+.ratings-reviews-container,
+.restaurant-details-container {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.stars {
+    display: inline-block;
+}
+
+.filled {
+    color: #ffc107;
+    font-size: 24px;
+}
+
+.empty {
+    color: #e4e5e9;
+    font-size: 24px;
+}
+
+.rating-value {
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.reviews-count {
+    color: #555;
+}
+
+.divider {
+    border-color: #000;
+}
+
+.ratings-title {
+    color: #333;
+}
+
+.ratings-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.rating-item {
+    margin-bottom: 10px;
+}
+
+.details-list {
+    margin-bottom: 30px;
+}
+
+.location-details {
+    margin-top: 30px;
+}

@@ -22,7 +22,7 @@ function Navbarmainhome() {
               <div class="collapse navbar-collapse" id="navbarCollapse">
 
                 <div class="navbar-nav mx-lg-auto">
-                  <a class="nav-item nav-link active text-light" href="/mainhome" aria-current="page">Home</a>
+                  <a class="nav-item nav-link active text-light" href="/" aria-current="page">Home</a>
                   <a class="nav-item nav-link text-light" href="#">About us</a>
                   <a class="nav-item nav-link text-light" href="#">contact us</a>
                   <a class="nav-item nav-link text-light" href="#">Pricing</a>

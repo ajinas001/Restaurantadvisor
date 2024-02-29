@@ -2,6 +2,9 @@ import { useState } from 'react'
 import axios from 'axios'
 import React from 'react'
 import './Register_user.css'
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Navigate } from 'react-router-dom';
 function Register_user() {
 
 
@@ -25,7 +28,7 @@ function Register_user() {
     const validate = (values) => {
 
         var error = {}
-        if (!values.username) {
+        if (!values.name) {
             error.username = "Enter username"
         }
 
@@ -48,13 +51,16 @@ function Register_user() {
         setFormErrors(validate(data))
         setIsSubmit(true)
         if (Object.keys(formErrors).length === 0 && isSubmit) {
-            axios.post('http://localhost:4000/save/save-user', data)
+            axios.post('http://localhost:4001/save/save-user', data)
                 .then((res) => {
                     console.log("res", res);
+                    // Navigate('/login')
+                    toast.success(res.data.message)
                     window.location.reload();
                 })
                 .catch(err => {
                     console.log(err);
+                    toast.error(err.response.data.message)
                 })
         }
     }
@@ -69,7 +75,7 @@ function Register_user() {
         <>
             {/* Button trigger modal */}
             <button
-                id='#reg-btn-u'
+                id='reg-btn-u'
                 type="button"
                 className="btn btn-danger "
                 data-bs-toggle="modal"
@@ -107,13 +113,13 @@ function Register_user() {
                                 </label>
                                 <input
                                     onChange={setRegister}
-                                    onClick={() => { setFormErrors({ ...formErrors, username: "" }) }}
+                                    onClick={() => { setFormErrors({ ...formErrors, name: "" }) }}
                                     type="text"
-                                    name='username'
+                                    name='name'
                                     className="form-control"
                                     id="exampleInputPassword1"
                                 />
-                                <span style={{ color: formErrors.username ? "red" : "" }}> {formErrors.username} </span>
+                                <span style={{ color: formErrors.name ? "red" : "" }}> {formErrors.name} </span>
                             </div>
 
                             <div className="mb-3">

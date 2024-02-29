@@ -14,7 +14,7 @@ function User_homebg() {
               <span id='bgspn'>Choose Location :</span>
               <div className="dropdown">
                 <button
-                  className="btn btn-secondary dropdown-toggle"
+                  className="btn btn-secondary dropdown-toggle bg-dark text-light"
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
@@ -22,86 +22,86 @@ function User_homebg() {
                   Select One
                 </button>
                 <ul className="dropdown-menu">
-                 <Link to={'/hotels/alappuzha'}> <li>
+                 <Link to={'/hotels/Alappuzha'}> <li>
                     <a className="dropdown-item" >
                     Alappuzha
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/ernakulam'}> <li>
+                  <Link to={'/hotels/Ernakulam'}> <li>
                     <a className="dropdown-item" >
                     Ernakulam
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/kozhikode'}> <li>
+                  <Link to={'/hotels/Kozhikode'}> <li>
                     <a className="dropdown-item" >
                     Kozhikode
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/palakkad'}> <li>
+                  <Link to={'/hotels/Palakkad'}> <li>
                     <a className="dropdown-item" >
                     Palakkad
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/kollam'}> <li>
+                  <Link to={'/hotels/Kollam'}> <li>
                     <a className="dropdown-item" >
                     Kollam
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/kannur'}> <li>
+                  <Link to={'/hotels/Kannur'}> <li>
                     <a className="dropdown-item" >
                     Kannur
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/kasaragod'}> <li>
+                  <Link to={'/hotels/Kasaragod'}> <li>
                     <a className="dropdown-item" >
                     Kasaragod
                     </a>
                   </li>
                   </Link>
 
-                  <Link to={'/hotels/idukki'}> <li>
+                  <Link to={'/hotels/Idukki'}> <li>
                     <a className="dropdown-item" >
                     Idukki
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/kottayam'}> <li>
+                  <Link to={'/hotels/Kottayam'}> <li>
                     <a className="dropdown-item" >
                     Kottayam
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/thrissur'}> <li>
+                  <Link to={'/hotels/Thrissur'}> <li>
                     <a className="dropdown-item" >
                     Thrissur
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/pathanamthitta'}> <li>
+                  <Link to={'/hotels/Pathanamthitta'}> <li>
                     <a className="dropdown-item" >
                     Pathanamthitta
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/malappuram'}> <li>
+                  <Link to={'/hotels/Malappuram'}> <li>
                     <a className="dropdown-item" >
                     Malappuram
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/wayanad'}> <li>
+                  <Link to={'/hotels/Wayanad'}> <li>
                     <a className="dropdown-item" >
                     Wayanad
                     </a>
                   </li>
                   </Link>
-                  <Link to={'/hotels/thiruvananthapuram'}> <li>
+                  <Link to={'/hotels/Thiruvananthapuram'}> <li>
                     <a className="dropdown-item" >
                     Thiruvananthapuram
                     </a>

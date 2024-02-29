@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Navigate } from 'react-router-dom'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 function Adminlocation() {
+    const token = localStorage.getItem("token")
     const [data, setdata] = useState({
     })
    
@@ -16,13 +20,19 @@ function Adminlocation() {
 
 
     const validation = (e) => {
-            axios.post('http://localhost:4000/save/add-district',data)    
+            axios.post('http://localhost:4001/save/add-district',data,{
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                  }
+            })    
             .then((res) => {
                 console.log(res);
-                Navigate('#')
+                // Navigate('/admin')
+                toast.success(res.data.message)
             })
             .catch((err)=>{
                 console.log("error",err);
+                toast.error(err.response.data.message)
             });
         
     }

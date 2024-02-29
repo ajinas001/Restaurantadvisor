@@ -11,10 +11,10 @@ function User_homebg() {
               Fuel Your Body<br /> Balance Your Mind.
             </h1><br />
             <form> 
-              <span id='bgspn'>Choose Location :</span>
-              <div className="dropdown">
+              <span id='bgspn'>Choose Location :  </span>
+              <div className="dropdown p-5">
                 <button
-                  className="btn btn-secondary dropdown-toggle"
+                  className="btn btn-secondary dropdown-toggle p-5"
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"

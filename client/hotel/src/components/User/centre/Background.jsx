@@ -117,7 +117,7 @@ function Background() {
            <Register/> <Register_user/></h1>
           </div>
           
-          <div className='col-lg-6' id='bgdiv2'>
+          <div className='col-lg-6 p-5 mt-5' id='bgdiv2'>
 
             <img id='bgimg1' src='/img2.jpg '></img>
           </div>

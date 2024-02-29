@@ -3,6 +3,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import './Register.css'
 import { useNavigate } from 'react-router-dom';
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Register() {
 
 
@@ -56,14 +58,17 @@ function Register() {
     setFormErrors(validate(data))
     setIsSubmit(true)
     if (Object.keys(formErrors).length === 0 && isSubmit) {
-      axios.post('http://localhost:4000/save/save-hotel', data)
+      console.log(data);
+      axios.post('http://localhost:4001/save/save-hotel', data)
         .then((res) => {
-          navigate('/user');
+          navigate('/login');
+          toast.success(res.data.message)
           console.log("res", res);
           window.location.reload();
         })
         .catch(err => {
           console.log(err);
+          toast.error(err.response.data.message)
         })
     }
   }

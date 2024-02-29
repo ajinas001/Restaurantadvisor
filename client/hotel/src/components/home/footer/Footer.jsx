@@ -5,7 +5,7 @@ function Footer() {
     <>
      <footer>
     
-    <div className="container-fluid navbgcolor mt-5 py-5" id='div1'>
+    <div className="container-fluid navbgcolor  py-5" id='div1'>
       <div className="container pt-5">
         <div className="row g-5">
           <div className="col-lg-3 col-md-6">

@@ -1,0 +1,170 @@
+import React, { useEffect } from 'react'
+import './Add_hotel.css'
+import { useState } from 'react'
+import { Navigate, useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import Navbar from '../../../components/User/navbar/Navbar'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+function Add_hotel() {
+
+    const id = localStorage.getItem('hotel_id')
+
+    const [file, setfile] = useState('')
+    console.log(file);
+
+
+
+    const [district, setdistrict] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:4000/save/view-district')
+            .then((res) => {
+                console.log(res);
+                setdistrict(res.data.data)
+
+            })
+            .catch((err) => {
+                console.log('Error in POST request:', err);
+            });
+    }, [])
+    console.log(district);
+
+
+
+    const navigate = useNavigate();
+    const [data, setdata] = useState({
+        name: "",
+        hotelId: id,
+        district: "",
+        email: "",
+        place: "",
+        pin: "",
+        time: "",
+        phone: "",
+        special: "",
+        meals: "",
+        features: "",
+        logo: "",
+        image1: "",
+        image2: "",
+        image3: "",
+        image4: "",
+        image5: "",
+        image6: "",
+    })
+    console.log(data);
+
+    const [formErrors, setFormErrors] = useState({})
+    const [isSubmit, setIsSubmit] = useState(false)
+    const setRegister = (event) => {
+        const name = event.target.name;
+        const value = event.target.value;
+        setdata({ ...data, [name]: value })
+
+
+    }
+    const validate = (values) => {
+
+        var error = {}
+        if (!values.name) {
+            error.name = "Enter name"
+        }
+        if (!values.hotelId) {
+            error.hotelId = ""
+        }
+
+
+        if (!values.district) {
+            error.district = "select district"
+        }
+        if (!values.email) {
+            error.email = "Enter email"
+        }
+        if (!values.place) {
+            error.place = "Enter place"
+        }
+        if (!values.pin) {
+            error.pin = "Enter pin"
+        }
+        if (!values.time) {
+            error.time = "Enter time"
+        }
+        if (!values.phone) {
+            error.phone = "Enter phone"
+        }
+        if (!values.special) {
+            error.special = "Enter special diets"
+        }
+        if (!values.meals) {
+            error.meals = "Enter meals"
+        }
+        if (!values.features) {
+            error.features = "Enter features"
+        }
+        if (!values.logo) {
+            error.logo = "Enter logo"
+        }
+        if (!values.image1) {
+            error.image1 = "Enter image"
+        }
+        if (!values.image2) {
+            error.image2 = "Enter image"
+        }
+        if (!values.image3) {
+            error.image3 = "Enter image"
+        }
+          if (!values.image4) {
+            error.image4 = "Enter image"
+        }
+          if (!values.image5) {
+            error.image5 = "Enter image"
+        }
+          if (!values.image6) {
+            error.image6 = "Enter image"
+        }
+        return error
+    }
+
+
+
+
+
+    const validation = (e) => {
+        e.preventDefault();
+        setFormErrors(validate(data))
+        setIsSubmit(true)
+
+
+
+        if (Object.keys(formErrors).length === 0 && isSubmit) {
+
+            if (file) {
+                const data = new FormData()
+                const filename = file.name
+                data.append('file', file)
+                data.append('name', filename)
+
+                axios.post('http://localhost:4000/save/upload', data)
+                    .then((res) => {
+                        console.log(res);
+
+                    })
+                    .catch((err) => {
+                        console.log('Error in POST request:', err);
+                    });
+            }
+
+            axios.post('http://localhost:4000/save/save-hotel', data)
+                .then((res) => {
+                    console.log('Response from POST request:', res);
+                    navigate('/hotel/hotel_details')
+                })
+                .catch((err) => {
+                    console.log('Error in POST request:', err);
+                });
+        }
+
+
+
+    }
