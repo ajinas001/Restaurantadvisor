@@ -166,8 +166,6 @@ function Add_hotel() {
         if (Object.keys(formErrors).length === 0 && isSubmit) {
             if (files.length > 0) {
                 const data = new FormData();
-
-
                 files.forEach((files) => {
                     data.append("files", files);
                 });

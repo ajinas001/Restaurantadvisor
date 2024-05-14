@@ -62,8 +62,6 @@ Registerrouter.post('/idfinding', async (req, res) => {
 Registerrouter.post('/add-hotel', async (req, res) => {
 
     try {
-
-
         const data = {
             name: req.body.name,
             district: req.body.district,

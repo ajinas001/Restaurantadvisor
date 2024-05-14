@@ -36,7 +36,7 @@ app.use('/admin',Adminrouter)
 const connectionString  ='mongodb+srv://ajinasmankadavu9544:ajinasmankadavu9544@cluster0.jxiwt1h.mongodb.net/RestaurantDB?retryWrites=true&w=majority'
 mongoose.connect(connectionString).then(()=>{
     app.listen(
-       4001,()=>{
+       port,()=>{
             console.log("server started at http://localhost:4001");
 })
 

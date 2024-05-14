@@ -5,6 +5,8 @@ const multer = require('multer')
 const addhotelrouter = express.Router()
 
 
+
+
 addhotelrouter.post('/add-hotel', async (req, res) => {
     try {
 

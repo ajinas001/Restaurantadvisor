@@ -8,7 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Login() {
 
-  
+
   // const [data,setdata] = useState({});
   // console.log("data",data);
   // const setregister = (event)=>{
@@ -70,17 +70,17 @@ function Login() {
           // window.location.reload()
           if (res.data.role == 1 && res.data) {
             localStorage.setItem("role", res.data.role)
-            localStorage.setItem("user_id", res.data.login_id)          
-            localStorage.setItem("token", res.data.token)          
+            localStorage.setItem("user_id", res.data.login_id)
+            localStorage.setItem("token", res.data.token)
             navigate('/user')
             toast.success(res.data.message);
-           
-          }
-        
-        
 
-         
-       
+          }
+
+
+
+
+
           if (res.data.role == 2) {
             localStorage.setItem("role", res.data.role)
             localStorage.setItem("Restaurant_id", res.data.login_id)
@@ -92,20 +92,20 @@ function Login() {
             localStorage.setItem("role", res.data.role)
             localStorage.setItem("token", res.data.token)
 
-          
+
             navigate('/admin')
             toast.success(res.data.message);
           }
-       
+
         })
         .catch(err => {
-         
+
           console.log(err);
-          
+
           toast.error(err.response.data.message);
-          
-          
-          
+
+
+
         })
     }
   }
@@ -113,66 +113,66 @@ function Login() {
 
     <>
 
-    
+
       <div className='container'>
-  <div className='row'>
-    <center>
-  <div className='loginpageborder text-start'>
+        <div className='row'>
+          <center>
+            <div className='loginpageborder text-start'>
 
-<form onSubmit={validation}>
-  <div className="mb-3">
-    <label htmlFor="exampleInputEmail1" className="form-label">
-      Username
-    </label>
+              <form onSubmit={validation}>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputEmail1" className="form-label">
+                    Username
+                  </label>
 
-    <input
-      type="text"
-      name='name'
-      className="form-control"
-      id="exampleInputEmail1"
-      aria-describedby="emailHelp"
+                  <input
+                    type="text"
+                    name='name'
+                    className="form-control"
+                    id="exampleInputEmail1"
+                    aria-describedby="emailHelp"
 
-      onChange={handleInputchange}
-      onClick={() => { setFormErrors({ formErrors, name: "" }) }}
-    />
-    <span style={{ color: formErrors.name ? "red" : "" }}>{formErrors.name}</span>
-    <div id="emailHelp" className="form-text">
+                    onChange={handleInputchange}
+                    onClick={() => { setFormErrors({ formErrors, name: "" }) }}
+                  />
+                  <span style={{ color: formErrors.name ? "red" : "" }}>{formErrors.name}</span>
+                  <div id="emailHelp" className="form-text">
 
-    </div>
-  </div>
-  <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label">
-      Password
-    </label>
+                  </div>
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputPassword1" className="form-label">
+                    Password
+                  </label>
 
 
-    <input
-      type="password"
-      name='password'
-      className="form-control"
-      id="exampleInputPassword1"
-      onChange={handleInputchange}
-      onClick={() => { setFormErrors({ formErrors, password: "" }) }}
-    />
-    <span style={{ color: formErrors.password ? "red" : "" }}>{formErrors.password}</span>
-  </div>
-  <div className="mb-3 form-check">
-    <input type="checkbox" className="form-check-input" id="exampleCheck1" />
-    <label className="form-check-label" htmlFor="exampleCheck1">
-      Check me out
-    </label>
-  </div>
-  <button type="submit" className="btn btn-dark">
-    Submit
-  </button>
-</form>
+                  <input
+                    type="password"
+                    name='password'
+                    className="form-control"
+                    id="exampleInputPassword1"
+                    onChange={handleInputchange}
+                    onClick={() => { setFormErrors({ formErrors, password: "" }) }}
+                  />
+                  <span style={{ color: formErrors.password ? "red" : "" }}>{formErrors.password}</span>
+                </div>
+                <div className="mb-3 form-check">
+                  <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+                  <label className="form-check-label" htmlFor="exampleCheck1">
+                    Check me out
+                  </label>
+                </div>
+                <button type="submit" className="btn btn-dark">
+                  Submit
+                </button>
+              </form>
 
-</div>
-</center>
-  </div>
-</div>
+            </div>
+          </center>
+        </div>
+      </div>
 
-{/* 
+      {/* 
       <section>
         <div className="form-box">
           <div className="form-value">
