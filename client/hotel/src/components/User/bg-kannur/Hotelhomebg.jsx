@@ -42,7 +42,7 @@ const id= localStorage.getItem("Restaurant_id")
 
                     <div className='col-lg-6' id='bgdiv2'>
 
-                        <img id='bgimg1' src='/img2.jpg'></img>
+                        <img id='bgimg1' src='/down.jpeg'></img>
                     </div>
                 </div>
             </div>

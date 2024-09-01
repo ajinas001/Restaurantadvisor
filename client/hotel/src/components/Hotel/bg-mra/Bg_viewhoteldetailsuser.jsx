@@ -92,6 +92,7 @@ function Bg_mra() {
         axios.post('http://localhost:4001/save/saverating', ratingsData)
             .then((res) => {
                 console.log('Rating success', res);
+                window.location.reload()
                 // setItem(res.data.data)
             })
             .catch((err) => {
@@ -116,7 +117,7 @@ function Bg_mra() {
                                 <img src={`/uploadedimages/${item.logo}`} id='logo'></img>
                                 <h1 id='bg-mra-head1'>
                                     {item.name}<br></br>
-                                   
+
                                 </h1><br></br>
 
 
@@ -210,10 +211,18 @@ function Bg_mra() {
                                     <div className='ratings-reviews-container'>
                                         <h4 className='section-title text-center'>Ratings and Reviews</h4>
                                         <div className='rating-container'>
-                                            <span className='rating-value'>{`${average}`}.0   {average !== null && (
-                                                <Rating name="read-only" value={`${average}`} readOnly />
-                                            )}</span>
+                                            {isNaN(average) || average === 0 ? (
+                                               <span1>0 Ratings</span1>
+                                            ) : (
+                                                <span className='rating-value'>
+                                                    {average}.0
+                                                    {average !== null && (
+                                                        <Rating name="read-only" value={average} readOnly />
+                                                    )}
+                                                </span>
+                                            )}
                                         </div>
+
                                         <p className='reviews-count'>({length}) Reviews</p>
                                         <hr className='divider'></hr>
                                         <h5 className='ratings-title'>Ratings</h5>
@@ -241,11 +250,11 @@ function Bg_mra() {
                                             <p><strong>CUISINES:</strong> Indian, Asian</p><br></br>
                                             <p><strong>SPECIAL DIETS:</strong> {item.special}</p><br></br>
                                             <p><strong>MEALS:</strong> {item.meals}</p><br></br>
-                                            <p><strong>FEATURES:</strong> {item.feature}</p><br></br>
+                                            <p><strong>FEATURES:</strong> {item.features}</p><br></br>
                                         </div>
                                         <div className='location-details'>
                                             <h4 className='section-title text-center'>Location Details</h4>
-                                            <p><i class="bi bi-geo-alt-fill"></i> {item.place}, {item.distrt} {item.pin}</p>
+                                            <p><i class="bi bi-geo-alt-fill"></i> {item.place}, {item.district} , {item.pin}</p>
                                             <p><i class="bi bi-telephone"></i> India+91 {item.phone}</p><br></br>
                                             <p><i class="bi bi-laptop"></i> Website</p>
                                         </div>
@@ -279,7 +288,7 @@ function Bg_mra() {
                                             <Rating value={atmosphereRating} onChange={(event, newValue) => handleAtmosphereRating(newValue)} />
                                         </div>
 
-                                        <button type="button" class="btn btn-success" onClick={handleSubmitRatings}>Submit</button>
+                                        <button type="button" class="btn btn-primary" style={{ backgroundColor: "rgb(73, 19, 23)" }} onClick={handleSubmitRatings}>Submit</button>
                                     </div>
                                 </div>
                             </div>

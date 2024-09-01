@@ -115,7 +115,7 @@ function Bg_viewhoteldetails() {
                                     Location Details
                                 </h4><br />
 
-                                <p><i class="bi bi-geo-alt-fill"></i> {item.place}, {item.distrt} {item.pin} </p><br />
+                                <p><i class="bi bi-geo-alt-fill"></i> {item.place}, {item.district} , {item.pin} </p><br />
                                 <p> <i class="bi bi-telephone"></i>  India+91 {item.phone}</p><br />
                                 <p><i class="bi bi-laptop"></i>Website </p>
                             </div>
